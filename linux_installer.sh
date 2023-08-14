@@ -102,6 +102,7 @@ if [ $confirmation = "y" ]; then
 	wget https://github.com/IdreesInc/Monocraft/releases/download/v3.0/Monocraft-nerd-fonts-patched.ttf
 	mkdir .local/share/fonts
 	mv Monocraft-nerd-fonts-patched.ttf .local/share/fonts
+ 	echo "Please go to your terminal, go to preferences and switch the font to MonoCraft Nerd Font. You can also disable scrollbars and the menubar itself in there"
 fi
 
 echo "Install Steam? (y/n)"
