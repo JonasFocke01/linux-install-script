@@ -85,6 +85,9 @@ if [ $confirmation = "y" ]; then
 	git clone git@github.com:JonasFocke01/i3blocks-config.git .config/i3blocks
  	sudo apt install nitrogen -y
   	nitrogen .config/i3/wallpaper --set-auto --random
+    	(crontab -l ; echo "## sets a random wallpaper (this might need adjustment. You might set the DISPLAY=:1 varibable to the output from 'env | grep DISPLAY')
+        30 * * * * export DISPLAY=:1 && /usr/bin/nitrogen --set-auto --random /home/jonas/.config/i3/wallpaper") | crontab -
+
 fi
 
 echo "Install nvim? (y/n)"
