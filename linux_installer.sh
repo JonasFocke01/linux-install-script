@@ -123,6 +123,12 @@ if [ $confirmation = "y" ]; then
 	sudo apt install flameshot -y
 fi
 
+echo "Install Pavucontrol? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	sudo apt install pavucontrol -y
+fi
+
 echo "Install node with nvm? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
