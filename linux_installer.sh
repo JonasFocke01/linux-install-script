@@ -111,10 +111,11 @@ if [ $confirmation = "y" ]; then
  	echo "Please go to your terminal, go to preferences and switch the font to MonoCraft Nerd Font. You can also disable scrollbars and the menubar itself in there"
 fi
 
-echo "Install Steam? (y/n)"
+echo "Install Gaming suite? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install steam -y
+ 	sudo apt install discord -y
 fi
 
 echo "Install Flameshot? (y/n)"
