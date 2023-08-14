@@ -111,6 +111,20 @@ if [ $confirmation = "y" ]; then
  	echo "Please go to your terminal, go to preferences and switch the font to MonoCraft Nerd Font. You can also disable scrollbars and the menubar itself in there"
 fi
 
+echo "Install Remindy? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	git clone git@github.com:JonasFocke01/remindy.git Desktop/remindy
+	cargo install cargo-deb
+	cd Desktop/remindy
+	sudo apt install openssl -y
+	sudo apt install libssl-dev -y
+	sudo apt install cmake -y
+	cargo-deb
+	cd ../..
+	sudo dpkg -i Desktop/remindy/target/debian/remindy_0.1.0_amd64.deb
+fi
+
 echo "Install Gaming suite? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
