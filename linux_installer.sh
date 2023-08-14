@@ -127,6 +127,7 @@ echo "Perform cleanup? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo rm -r Desktop Documents Music Pictures Videos Public Templates .bash_history .bash_logout .bashrc .shell.pre-oh-my-zsh
+ 	mkdir repos workspace
 fi
 
 echo "Restart the system now? (y/n)"
