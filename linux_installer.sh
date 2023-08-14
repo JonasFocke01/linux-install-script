@@ -15,6 +15,7 @@ read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install keepassxc -y
 	scp -P 88 -r manfild@tigerly:/volume1/Allgemeine\\\ Daten/Familie/Jonas/Geschäftlich/KeePassXC_ Desktop
+ 	sudo apt install cifs-utils -y
 	echo "The keepass database is on the desktop"
 fi
 
