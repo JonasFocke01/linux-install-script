@@ -82,6 +82,7 @@ if [ $confirmation = "y" ]; then
 	git clone ssh://manfild@tigerly:88/volume1/Allgemeine\ Daten/Familie/Jonas/IT/repos/config_files/picom .config/picom
 	sudo apt install i3blocks -y
 	git clone git@github.com:JonasFocke01/i3blocks-config.git .config/i3blocks
+ 	sudo apt install nitrogen -y
 fi
 
 echo "Install nvim? (y/n)"
