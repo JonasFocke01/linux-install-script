@@ -83,6 +83,7 @@ if [ $confirmation = "y" ]; then
 	sudo apt install i3blocks -y
 	git clone git@github.com:JonasFocke01/i3blocks-config.git .config/i3blocks
  	sudo apt install nitrogen -y
+  	nitrogen .config/i3/wallpaper --set-auto --random
 fi
 
 echo "Install nvim? (y/n)"
