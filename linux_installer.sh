@@ -148,7 +148,6 @@ echo "Install node with nvm? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
-	nvm install 16.16
 fi
 
 echo "Perform cleanup? (y/n)"
