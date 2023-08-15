@@ -1,0 +1,3 @@
+# linux-install-script
+
+This is my PERSONAL install script for the most common software i use like nvim, i3 and so on...
