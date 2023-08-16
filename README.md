@@ -1,3 +1,15 @@
 # linux-install-script
 
 This is my PERSONAL install script for the most common software i use like nvim, i3 and so on...
+For two or three steps it tries to connect to my local nas, but is is written to continue on fail, so with no nas, the steps are simply scripped, so that it can be used in many circumstances. This also pulls some private repos from my github with configurations. So no guarantees, that all steps work for you.
+
+This asks before each step if you want to perform it.
+´install spotify (y/n)´...
+
+## Reasoning
+
+I created this little script, because even for common tasks like installing nvim, there are many things you have to do, and i cant remember them all. This script just does what i would manually do.
+
+## Disclaimer
+
+This is currently only testet for popos 22.04, but most of the steps should work on all debian or even on all linux based systems
