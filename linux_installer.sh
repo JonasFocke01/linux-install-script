@@ -72,13 +72,13 @@ echo "Install zsh? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install zsh -y
-	chsh -s /usr/bin/zsh 
+	chsh -s /usr/bin/zsh
 	# Install oh my zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	# Install exa to replace ls
 	cargo install exa
 	sudo apt install fzf
-	scp -P 88 manfild@tigerly:/volume1/Allgemeine\\\ Daten/Familie/Jonas/IT/repos/shell_commands/history.md Desktop 
+	scp -P 88 manfild@tigerly:/volume1/Allgemeine\\\ Daten/Familie/Jonas/IT/repos/shell_commands/history.md Desktop
 	cat Desktop/history.md | tee .zsh_history
 	git clone git@github.com:JonasFocke01/zsh-config.git Desktop/zsh-config
 	cat Desktop/zsh-config/.zshrc | tee .zshrc
