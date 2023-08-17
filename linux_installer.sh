@@ -75,7 +75,7 @@ if [ $confirmation = "y" ]; then
 	chsh -s /usr/bin/zsh 
 	# Install oh my zsh
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	# Install exa for a ls replacement
+	# Install exa to replace ls
 	cargo install exa
 	sudo apt install fzf
 	scp -P 88 manfild@tigerly:/volume1/Allgemeine\\\ Daten/Familie/Jonas/IT/repos/shell_commands/history.md Desktop 
@@ -122,6 +122,7 @@ if [ $confirmation = "y" ]; then
 	git clone git@github.com:JonasFocke01/neovim-config.git .config/nvim
 	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    sudo apt install ripgrep
 	echo "Please start nvim, go into the file 'packer.lua' and run ':PackerSync'"
 fi
 
