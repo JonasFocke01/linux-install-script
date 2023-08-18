@@ -56,6 +56,8 @@ read confirmation;
 if [ $confirmation = "y" ]; then
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 	source "$HOME/.cargo/env"
+ 	cargo install cargo-watch
+  	cargo install cargo-deb
 fi
 
 echo "Install zsh? (y/n)"
@@ -115,7 +117,6 @@ echo "Install Remindy? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	git clone git@github.com:JonasFocke01/remindy.git Desktop/remindy
-	cargo install cargo-deb
 	cd Desktop/remindy
 	sudo apt install openssl -y
 	sudo apt install libssl-dev -y
