@@ -58,6 +58,7 @@ if [ $confirmation = "y" ]; then
 	source "$HOME/.cargo/env"
  	cargo install cargo-watch
   	cargo install cargo-deb
+   	sudo apt install gdb
 fi
 
 echo "Install zsh? (y/n)"
