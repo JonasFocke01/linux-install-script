@@ -8,6 +8,10 @@ read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt update -y
 	sudo apt upgrade -y
+ 	name=$(whoami)
+	git config --global user.name $name
+ 	distro=$(cat /etc/lsb-release | head -n1)
+	git config --global user.email "${name}@${distro}.com"
 fi
 
 echo "Install KeepassXC? (y/n)"
