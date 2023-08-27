@@ -142,6 +142,7 @@ echo "Install Flameshot? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install flameshot -y
+ 	sudo apt install feh -y
 fi
 
 echo "Install Pavucontrol? (y/n)"
