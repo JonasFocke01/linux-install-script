@@ -63,6 +63,7 @@ if [ $confirmation = "y" ]; then
  	cargo install cargo-watch
   	cargo install cargo-deb
    	sudo apt install gdb
+    	cargo install elf2uf2-rs
 fi
 
 echo "Install zsh? (y/n)"
