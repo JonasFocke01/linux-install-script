@@ -12,6 +12,7 @@ if [ $confirmation = "y" ]; then
 	git config --global user.name $name
  	distro=$(cat /etc/lsb-release | head -n1)
 	git config --global user.email "${name}@${distro}.com"
+ 	sudo apt install libudev-dev
 fi
 
 echo "Install KeepassXC? (y/n)"
