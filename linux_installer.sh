@@ -63,7 +63,6 @@ if [ $confirmation = "y" ]; then
 	source "$HOME/.cargo/env"
  	cargo install cargo-watch
   	cargo install cargo-deb
-   	sudo apt install gdb
     	cargo install elf2uf2-rs
 fi
 
@@ -81,6 +80,19 @@ if [ $confirmation = "y" ]; then
 	cat Desktop/history.md | tee .zsh_history
 	git clone git@github.com:JonasFocke01/zsh-config.git Desktop/zsh-config
 	cat Desktop/zsh-config/.zshrc | tee .zshrc
+fi
+
+echo "Install gdb with gf2 frontend? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	sudo apt install gdb -y
+	mkdir .gf2
+ 	cd .gf2
+ 	git clone https://github.com/nakst/gf.git .
+  	./build.sh
+   	cd ..
+    	prev=$(cat .zshrc)
+    	echo -n "$prev:/home/jonas/.gf2" >> .zshrc
 fi
 
 echo "Install i3? (y/n)"
