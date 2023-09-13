@@ -180,6 +180,12 @@ if [ $confirmation = "y" ]; then
 	sudo apt install spotify -y
 fi
 
+echo "Install Vlc Player? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	sudo apt install vlc -y
+fi
+
 echo "Perform cleanup? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
