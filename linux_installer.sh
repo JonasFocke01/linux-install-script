@@ -136,13 +136,13 @@ echo "Install Remindy? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	git clone git@github.com:JonasFocke01/remindy.git Desktop/remindy
-	cd Desktop/remindy
+	cd Desktop/remindy/remindy
 	sudo apt install openssl -y
 	sudo apt install libssl-dev -y
 	sudo apt install cmake -y
 	cargo-deb
-	cd ../..
-	sudo dpkg -i Desktop/remindy/target/debian/remindy_0.1.0_amd64.deb
+	cd ../../..
+	sudo dpkg -i Desktop/remindy/remindy/target/debian/remindy_0.1.0_amd64.deb
 fi
 
 echo "Install Gaming suite? (y/n)"
