@@ -141,6 +141,8 @@ if [ $confirmation = "y" ]; then
 	sudo apt install libssl-dev -y
 	sudo apt install cmake -y
  	sudo apt install gtk-3-dev -y
+  	sudo apt install libasound2-dev -y
+   	sudo apt install libwebkit2gtk-4.0 -y
 	cargo-deb
 	cd ../../..
 	sudo dpkg -i Desktop/remindy/remindy/target/debian/remindy_0.1.0_amd64.deb
