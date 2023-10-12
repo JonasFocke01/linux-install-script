@@ -64,6 +64,8 @@ if [ $confirmation = "y" ]; then
  	cargo install cargo-watch
   	cargo install cargo-deb
     	cargo install elf2uf2-rs
+      	cargo install rustup target add thumbv6m-none-eabi
+	cargo install probe-rs
 fi
 
 echo "Install zsh? (y/n)"
