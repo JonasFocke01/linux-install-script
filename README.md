@@ -8,7 +8,7 @@ This asks before each step if you want to perform it.
 
 ## Reasoning
 
-I created this little script, because even for common tasks like installing nvim, there are many things you have to do, and i cant remember them all. This script just does what i would manually do.
+I created this little script, because even for common tasks like installing nvim, there are many things you have to do, and i cant remember them all. I reinstall my system often, because im tinkering around and swap distros. This script just install what i would manually install.
 
 ## Disclaimer
 
