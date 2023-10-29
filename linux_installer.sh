@@ -249,6 +249,17 @@ HandlePowerKey=suspend
 EOF
 fi
 
+echo "Install arduino-cli? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+    cd Desktop
+    wget https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Linux_64bit.tar.gz
+    mkdir ../.arduino-cli
+    tar -xzf arduino-cli_latest_Linux_64bit.tar.gz -C ../.arduino-cli
+    cd ..
+    sed -i -e "\$s/\$/:\/home\/$(whoami)\/.arduino-cli/" .zshrc
+fi
+
 echo "Restart the system now? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
