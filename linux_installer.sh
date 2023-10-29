@@ -199,7 +199,7 @@ if [ $confirmation = "y" ]; then
  	mkdir repos workspace
 fi
 
-echo "Update Systemd config? (y/n)"
+echo "Edit Systemd config? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo tee /etc/systemd/logind.conf <<EOF
