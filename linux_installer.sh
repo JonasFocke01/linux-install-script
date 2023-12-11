@@ -138,6 +138,7 @@ fi
 echo "Install Remindy? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
+	sudo apt install moreutils -y
 	mkdir repos
 	git clone git@github.com:JonasFocke01/remindy.git repos/remindy
 	cd repos/remindy
