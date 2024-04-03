@@ -159,6 +159,12 @@ if [ $confirmation = "y" ]; then
  	sudo apt install discord -y
 fi
 
+echo "Automount tigerly? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+    echo "//tigerly/Allgemeine\040Daten /mnt/tigerly cifs username=manfild,password=DSsiKul24Sd,vers=2.0 0 0" | sudo tee -a /etc/fstab
+fi
+
 echo "Install Flameshot? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
