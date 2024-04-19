@@ -81,7 +81,9 @@ if [ $confirmation = "y" ]; then
 	scp -P 88 manfild@tigerly:/volume1/Allgemeine\\\ Daten/Familie/Jonas/IT/repos/shell_commands/history.md Desktop
 	cat Desktop/history.md | tee .zsh_history
 	git clone git@github.com:JonasFocke01/zsh-config.git Desktop/zsh-config
-	cat Desktop/zsh-config/.zshrc | tee .zshrc
+ 	windowsBoot=$(sudo efibootmgr -v | grep Windows | grep -o '000[0-9]')
+	sed "s/0002/$windowsBoot/g" Desktop/zsh-config/.zshrc > Desktop/zsh-config/tmp
+	mv Desktop/zsh-config/tmp .zshrc
 fi
 
 echo "Install gdb with gf2 frontend? (y/n)"
