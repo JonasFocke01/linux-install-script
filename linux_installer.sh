@@ -144,13 +144,7 @@ if [ $confirmation = "y" ]; then
 	mkdir repos
 	git clone git@github.com:JonasFocke01/remindy.git repos/remindy
 	cd repos/remindy
-	sudo apt install openssl -y
-	sudo apt install libssl-dev -y
-	sudo apt install cmake -y
- 	sudo apt install gtk-3-dev -y
-  	sudo apt install libasound2-dev -y
-   	sudo apt install libwebkit2gtk-4.0 -y
-	./linux_install_x86_64.sh
+	./linux_install_script.sh
 	cd ../..
 fi
 
