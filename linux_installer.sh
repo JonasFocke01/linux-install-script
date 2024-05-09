@@ -122,10 +122,10 @@ if [ $confirmation = "y" ]; then
 	sudo apt update -y
 	sudo apt install neovim -y
 	git clone git@github.com:JonasFocke01/neovim-config.git .config/nvim
-	git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    sudo apt install ripgrep
-	echo "Please start nvim, go into the file 'packer.lua' and run ':PackerSync'"
+	# git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ 	# ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+	# sudo apt install ripgrep
+	# echo "Please start nvim, go into the file 'packer.lua' and run ':PackerSync'"
 fi
 
 echo "Install MonoCraft font? (y/n)"
