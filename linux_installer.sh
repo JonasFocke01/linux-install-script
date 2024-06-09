@@ -148,6 +148,16 @@ if [ $confirmation = "y" ]; then
 	cd ../..
 fi
 
+echo "Install solar-overview? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	mkdir repos
+	git clone git@github.com:JonasFocke01/solar-overview.git repos/solar-overview
+	cd repos/solar-overview
+	./linux_install_script.sh
+	cd ../..
+fi
+
 echo "Install Gaming suite? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
