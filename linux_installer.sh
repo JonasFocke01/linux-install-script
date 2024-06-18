@@ -124,7 +124,7 @@ if [ $confirmation = "y" ]; then
 	git clone git@github.com:JonasFocke01/neovim-config.git .config/nvim
 	# git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  	# ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-	# sudo apt install ripgrep
+	sudo apt install ripgrep
 	# echo "Please start nvim, go into the file 'packer.lua' and run ':PackerSync'"
 fi
 
@@ -156,6 +156,18 @@ if [ $confirmation = "y" ]; then
 	cd repos/solar-overview
 	./linux_install_script.sh
 	cd ../..
+fi
+
+echo "Install btc_miner_deamon? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	mkdir repos
+	git clone git@github.com:JonasFocke01/btc_miner_deamon.git repos/btc_miner_deamon
+	cd repos/btc_miner_deamon
+	cargo build -r
+	cd ../..
+ 	prev=$(cat .zshrc)
+    	echo -n "$prev:/home/jonas/repos/btc_miner_deamon/target/release/" >> .zshrc
 fi
 
 echo "Install Gaming suite? (y/n)"
