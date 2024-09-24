@@ -145,6 +145,8 @@ if [ $confirmation = "y" ]; then
 	git clone git@github.com:JonasFocke01/remindy.git repos/remindy
 	cd repos/remindy
 	./linux_install_script.sh
+ 	echo "Warning, this migh involve more configuration"
+  	sleep 5s
 	cd ../..
 fi
 
