@@ -219,6 +219,16 @@ if [ $confirmation = "y" ]; then
 	sudo apt install vlc -y
 fi
 
+echo "Automount proton at startup? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	mkdir proton
+	crontab -l > mycron
+ 	echo "* * * * * rclone mount proton: proton --vfs-cache-mode writes" >> mycron
+  	crontab mycron
+ 	rm mycron
+fi
+
 echo "Perform cleanup? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
