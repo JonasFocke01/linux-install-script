@@ -1,3 +1,10 @@
+# Quickstart
+
+Run this in your terminal to use the latest script:
+```bash
+curl -O https://raw.githubusercontent.com/JonasFocke01/linux-install-script/refs/heads/main/linux_installer.sh && chmod +x linux_installer.sh && ./linux_installer.sh && rm linux_installer.sh
+```
+
 # linux-install-script
 
 This is my PERSONAL install script for the most common software i use like nvim, i3 and so on...
