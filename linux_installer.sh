@@ -3,6 +3,8 @@
 echo "INSTALL HELPER FOR LINUX"
 echo
 
+cd $HOME
+
 echo "Update System now (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
