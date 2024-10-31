@@ -114,7 +114,6 @@ if [ $confirmation = "y" ]; then
   	nitrogen .config/i3/wallpaper --set-auto --random
     	(crontab -l ; echo "## sets a random wallpaper (this might need adjustment. You might set the DISPLAY=:1 varibable to the output from 'env | grep DISPLAY')
         30 * * * * export DISPLAY=:1 && /usr/bin/nitrogen --set-auto --random /home/jonas/.config/i3/wallpaper") | crontab -
-
 fi
 
 echo "Install nvim? (y/n)"
