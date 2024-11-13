@@ -82,6 +82,7 @@ if [ $confirmation = "y" ]; then
 	sudo apt install fzf
 	scp -P 88 manfild@tigerly:/volume1/Allgemeine\\\ Daten/Familie/Jonas/IT/repos/shell_commands/history.md Desktop
 	cat Desktop/history.md | tee .zsh_history
+ 	sudo apt install tlp -y
 	git clone git@github.com:JonasFocke01/zsh-config.git Desktop/zsh-config
  	windowsBoot=$(sudo efibootmgr -v | grep Windows | grep -o '000[0-9]')
 	sed "s/0002/$windowsBoot/g" Desktop/zsh-config/.zshrc > Desktop/zsh-config/tmp
