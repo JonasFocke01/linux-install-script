@@ -244,8 +244,8 @@ if [ $confirmation = "y" ]; then
 	sudo tee /etc/systemd/logind.conf <<EOF
 [Login]
 HandlePowerKey=suspend
-HandleLidSwitch=hibernate
-HandleLidSwitchExternalPower=hibernate
+HandleLidSwitch=suspend
+HandleLidSwitchExternalPower=suspend
 HandleLidSwitchDocked=ignore
 LidSwitchIgnoreInhibited=yes
 EOF
