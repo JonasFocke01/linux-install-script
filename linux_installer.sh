@@ -111,6 +111,10 @@ if [ $confirmation = "y" ]; then
 	git clone ssh://manfild@tigerly:88/volume1/Allgemeine\ Daten/Familie/Jonas/IT/repos/config_files/picom .config/picom
 	sudo apt install i3blocks -y
 	git clone git@github.com:JonasFocke01/i3blocks-config.git .config/i3blocks
+        sudo apt install fzf fd-find ulauncher
+	sudo rm -r .config/ulauncher
+        mkdir .config/ulauncher
+        git clone https://github.com/JonasFocke01/ulauncher-config .config/ulauncher
  	sudo apt install nitrogen -y
   	nitrogen .config/i3/wallpaper --set-auto --random
     	(crontab -l ; echo "## sets a random wallpaper (this might need adjustment. You might set the DISPLAY=:1 varibable to the output from 'env | grep DISPLAY')
