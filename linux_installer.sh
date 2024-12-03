@@ -80,19 +80,6 @@ if [ $confirmation = "y" ]; then
 	mv Desktop/zsh-config/tmp .zshrc
 fi
 
-echo "Install gdb with gf2 frontend? (y/n)"
-read confirmation;
-if [ $confirmation = "y" ]; then
-	sudo apt install gdb -y
-	mkdir .gf2
- 	cd .gf2
- 	git clone https://github.com/nakst/gf.git .
-  	./build.sh
-   	cd ..
-    	prev=$(cat .zshrc)
-    	echo -n "$prev:/home/jonas/.gf2" >> .zshrc
-fi
-
 echo "Install i3? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
