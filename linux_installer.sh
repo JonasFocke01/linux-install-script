@@ -221,6 +221,7 @@ if [ $confirmation = "y" ]; then
     cd dotfiles
     stow --adopt .
     git restore .
+    cd $HOME
 fi
 
 echo "Restart the system now? (y/n)"
