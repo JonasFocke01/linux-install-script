@@ -42,7 +42,7 @@ if [ $confirmation = "y" ]; then
 	read confirmation;
 	cat .ssh/id_rsa.pub | xclip -sel clip
 	echo "Now we gonna connect to tigerly"
-	echo "The **ONLY** thing you have to do now, after typing in the password, is to 'CRTL+(SHIFT)+V' and then 'CTRL+C'k"
+	echo "The **ONLY** thing you have to do now, after typing in the password, is to 'CRTL+(SHIFT)+V' and then 'CTRL+C'"
 	echo "Tee is started and therefore you DO NOT NEED TO DO ANYTHING ELSE"
 	echo "This will paste the generated ssh key into the authorized_keys file"
 	echo "And therefore allow this computer from now on to connect to tigerly without a password"
