@@ -97,15 +97,12 @@ echo "Install i3? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install i3 -y
-	git clone git@github.com:JonasFocke01/i3-config.git .config/i3
 	sudo apt install picom -y
 	git clone ssh://manfild@tigerly:88/volume1/Allgemeine\ Daten/Familie/Jonas/IT/repos/config_files/picom .config/picom
 	sudo apt install i3blocks -y
-	git clone git@github.com:JonasFocke01/i3blocks-config.git .config/i3blocks
         sudo apt install fzf fd-find ulauncher -y
 	sudo rm -r .config/ulauncher
         mkdir .config/ulauncher
-        git clone https://github.com/JonasFocke01/ulauncher-config .config/ulauncher
 	sudo apt install feh -y
 fi
 
@@ -115,20 +112,7 @@ if [ $confirmation = "y" ]; then
 	sudo add-apt-repository ppa:neovim-ppa/unstable -y
 	sudo apt update -y
 	sudo apt install neovim -y
-	git clone git@github.com:JonasFocke01/neovim-config.git .config/nvim
-	# git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- 	# ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 	sudo apt install ripgrep
-	# echo "Please start nvim, go into the file 'packer.lua' and run ':PackerSync'"
-fi
-
-echo "Install MonoCraft font? (y/n)"
-read confirmation;
-if [ $confirmation = "y" ]; then
-	wget https://github.com/IdreesInc/Monocraft/releases/download/v3.0/Monocraft-nerd-fonts-patched.ttf
-	mkdir .local/share/fonts
-	mv Monocraft-nerd-fonts-patched.ttf .local/share/fonts
- 	echo "Please go to your terminal, go to preferences and switch the font to MonoCraft Nerd Font. You can also disable scrollbars and the menubar itself in there"
 fi
 
 echo "Install Remindy? (y/n)"
@@ -152,18 +136,6 @@ if [ $confirmation = "y" ]; then
 	cd repos/solar-overview
 	./linux_install_script.sh
 	cd ../..
-fi
-
-echo "Install btc_miner_deamon? (y/n)"
-read confirmation;
-if [ $confirmation = "y" ]; then
-	mkdir repos
-	git clone git@github.com:JonasFocke01/btc_miner_deamon.git repos/btc_miner_deamon
-	cd repos/btc_miner_deamon
-	cargo build -r
-	cd ../..
- 	prev=$(cat .zshrc)
-    	echo -n "$prev:/home/jonas/repos/btc_miner_deamon/target/release/" >> .zshrc
 fi
 
 echo "Install Gaming suite? (y/n)"
@@ -252,6 +224,16 @@ if [ $confirmation = "y" ]; then
     tar -xzf arduino-cli_latest_Linux_64bit.tar.gz -C ../.arduino-cli
     cd ..
     sed -i -e "\$s/\$/:\/home\/$(whoami)\/.arduino-cli/" .zshrc
+fi
+
+echo "Use my dotfiles? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+    sudo apt install stow -y
+    git clone git@github.com:JonasFocke01/dotfiles.git
+    cd dotfiles
+    stow --adopt .
+    git restore .
 fi
 
 echo "Restart the system now? (y/n)"
