@@ -84,12 +84,10 @@ echo "Install i3? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install i3 -y
-	sudo apt install picom -y
-	git clone ssh://manfild@tigerly:88/volume1/Allgemeine\ Daten/Familie/Jonas/IT/repos/config_files/picom .config/picom
+        sudo apt install alacritty
+        sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
 	sudo apt install i3blocks -y
         sudo apt install fzf fd-find ulauncher -y
-	sudo rm -r .config/ulauncher
-        mkdir .config/ulauncher
 	sudo apt install feh -y
 fi
 
