@@ -100,6 +100,16 @@ if [ $confirmation = "y" ]; then
 	sudo apt install ripgrep
 fi
 
+echo "Clone WIP projects? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	mkdir repos
+ 	cd repos
+ 	git clone git@github.com:JonasFocke01/ruhige_waldgeraeusche.git
+  	git clone git@github.com:JonasFocke01/remindy.git
+   	cd ..
+fi
+
 echo "Install solar-overview? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
@@ -170,8 +180,7 @@ fi
 echo "Perform cleanup? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
-	sudo rm -r Desktop Documents Music Pictures Videos Public Templates .bash_history .bash_logout .bashrc .shell.pre-oh-my-zsh
- 	mkdir repos workspace
+	sudo rm -r Documents Music Pictures Videos Public Templates .bash_history .bash_logout .bashrc
 fi
 
 echo "Configure Systemd config? (y/n)"
