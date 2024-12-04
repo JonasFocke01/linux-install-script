@@ -100,19 +100,6 @@ if [ $confirmation = "y" ]; then
 	sudo apt install ripgrep
 fi
 
-echo "Install Remindy? (y/n)"
-read confirmation;
-if [ $confirmation = "y" ]; then
-	sudo apt install moreutils -y
-	mkdir repos
-	git clone git@github.com:JonasFocke01/remindy.git repos/remindy
-	cd repos/remindy
-	./linux_install_script.sh
- 	echo "Warning, this migh involve more configuration"
-  	sleep 5s
-	cd ../..
-fi
-
 echo "Install solar-overview? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
