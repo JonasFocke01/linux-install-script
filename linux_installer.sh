@@ -61,23 +61,24 @@ if [ $confirmation = "y" ]; then
 	cargo install probe-rs
 fi
 
-echo "Install zsh? (y/n)"
+echo "Install shell? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install zsh -y
 	chsh -s /usr/bin/zsh
-	# Install oh my zsh
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        curl -sS https://starship.rs/install.sh | sh
 	# Install exa to replace ls
 	cargo install exa
 	sudo apt install fzf
-	scp -P 88 manfild@tigerly:/volume1/Allgemeine\\\ Daten/Familie/Jonas/IT/repos/shell_commands/history.md Desktop
-	cat Desktop/history.md | tee .zsh_history
- 	sudo apt install tlp -y
-	git clone git@github.com:JonasFocke01/zsh-config.git Desktop/zsh-config
  	windowsBoot=$(sudo efibootmgr -v | grep Windows | grep -o '000[0-9]')
 	sed "s/0002/$windowsBoot/g" Desktop/zsh-config/.zshrc > Desktop/zsh-config/tmp
 	mv Desktop/zsh-config/tmp .zshrc
+fi
+
+echo "Install utils? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+	sudo apt install tlp -y
 fi
 
 echo "Install i3? (y/n)"
