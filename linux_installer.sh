@@ -10,11 +10,6 @@ read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt update -y
 	sudo apt upgrade -y
- 	name=$(whoami)
-	git config --global user.name $name
- 	distro=$(cat /etc/lsb-release | head -n1)
-	git config --global user.email "${name}@${distro}.com"
- 	sudo apt install libudev-dev
 fi
 
 echo "Install Firefox? (y/n)"
@@ -85,7 +80,7 @@ fi
 echo "Install utils? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
-	sudo apt install tlp -y
+	sudo apt install tlp libudev-dev -y
 fi
 
 echo "Install i3? (y/n)"
