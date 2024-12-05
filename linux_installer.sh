@@ -92,7 +92,7 @@ if [ $confirmation = "y" ]; then
 	sudo apt install feh -y
 fi
 
-echo "Install nvim? (y/n)"
+echo "Install neovim? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo add-apt-repository ppa:neovim-ppa/unstable -y
