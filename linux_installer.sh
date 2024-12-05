@@ -64,11 +64,20 @@ fi
 echo "Install shell? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
-	sudo apt install zsh -y
-	chsh -s /usr/bin/zsh
+	sudo apt install zsh fzf alacritty -y
 	cargo install exa
-	sudo apt install fzf
- 	# windowsBoot=$(sudo efibootmgr -v | grep Windows | grep -o '000[0-9]')
+	chsh -s /usr/bin/zsh
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
+fi
+
+echo "Add shortcut to reboot into windows? (y/n)"
+read confirmation;
+if [ $confirmation = "y" ]; then
+        echo "Warning: This does not work correctly, so this step is skipped."
+	echo "Please refer to the install script to manually do this."
+ 	echo "TODO: Fix this step."
+	# windowsBoot=$(sudo efibootmgr -v | grep Windows | grep -o '000[0-9]')
 	# sed "s/0002/$windowsBoot/g" Desktop/zsh-config/.zshrc > Desktop/zsh-config/tmp
 	# mv Desktop/zsh-config/tmp .zshrc
 fi
@@ -83,9 +92,7 @@ echo "Install i3? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install i3 -y
-        sudo apt install alacritty
-        sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/alacritty 50
-	sudo apt install i3blocks -y
+        sudo apt install i3blocks -y
         sudo apt install fzf fd-find ulauncher -y
 	sudo apt install feh -y
 fi
@@ -171,6 +178,7 @@ read confirmation;
 if [ $confirmation = "y" ]; then
 	mkdir proton
 	crontab -l > mycron
+ 	echo "TODO: rclone needs to be installed and configured"
  	echo "* * * * * rclone mount proton: proton --vfs-cache-mode writes" >> mycron
   	crontab mycron
  	rm mycron
