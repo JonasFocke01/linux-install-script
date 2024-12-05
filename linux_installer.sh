@@ -66,13 +66,11 @@ read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install zsh -y
 	chsh -s /usr/bin/zsh
-        curl -sS https://starship.rs/install.sh | sh
-	# Install exa to replace ls
 	cargo install exa
 	sudo apt install fzf
- 	windowsBoot=$(sudo efibootmgr -v | grep Windows | grep -o '000[0-9]')
-	sed "s/0002/$windowsBoot/g" Desktop/zsh-config/.zshrc > Desktop/zsh-config/tmp
-	mv Desktop/zsh-config/tmp .zshrc
+ 	# windowsBoot=$(sudo efibootmgr -v | grep Windows | grep -o '000[0-9]')
+	# sed "s/0002/$windowsBoot/g" Desktop/zsh-config/.zshrc > Desktop/zsh-config/tmp
+	# mv Desktop/zsh-config/tmp .zshrc
 fi
 
 echo "Install utils? (y/n)"
