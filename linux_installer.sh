@@ -147,7 +147,7 @@ if [ $confirmation = "y" ]; then
 	sudo apt install pavucontrol -y
 fi
 
-echo "Install nvm? (y/n)"
+echo "Install nodeversionmanager? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
