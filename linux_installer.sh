@@ -91,7 +91,7 @@ if [ $confirmation = "y" ]; then
 	sudo apt install i3 -y
         sudo apt install i3blocks -y
         sudo apt install fzf fd-find ulauncher -y
-	sudo apt install feh -y
+	sudo apt install feh imagemagick -y
 fi
 
 echo "Install neovim? (y/n)"
