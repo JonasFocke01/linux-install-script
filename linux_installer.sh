@@ -107,7 +107,8 @@ if [ $confirmation = "y" ]; then
 	git clone git@github.com:JonasFocke01/dotfiles.git
  	sudo cp dotfiles/systemd/system/screenlock@.service /etc/systemd/system/screenlock@.service
  	sudo systemctl daemon-reload
- 	sudo systemctl enable screenlock@jonas.service
+ 	sudo systemctl enable screenlock_pre@jonas.service
+  	sudo systemctl enable screenlock_post@jonas.service
 fi
 
 echo "Install neovim? (y/n)"
