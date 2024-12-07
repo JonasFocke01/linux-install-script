@@ -105,8 +105,9 @@ if [ $confirmation = "y" ]; then
 	 	copyq \
    		ranger
 	git clone git@github.com:JonasFocke01/dotfiles.git
- 	sudo cp dotfiles/systemd/system/screenlock@.service /etc/systemd/system/screenlock@.service
- 	sudo systemctl daemon-reload
+ 	sudo cp dotfiles/systemd/system/screenlock_pre@.service /etc/systemd/system/screenlock_pre@.service
+ 	sudo cp dotfiles/systemd/system/screenlock_post@.service /etc/systemd/system/screenlock_post@.service
+  	sudo systemctl daemon-reload
  	sudo systemctl enable screenlock_pre@jonas.service
   	sudo systemctl enable screenlock_post@jonas.service
 fi
