@@ -89,22 +89,9 @@ echo "Install i3? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
 	sudo apt install i3 i3blocks i3lock -y
- 	sudo tee /etc/systemd/system/screenlock@.service <<EOF
-[Unit]
-Description=Starts i3lock when suspending
-After=suspend.target
-
-[Service]
-User=jonas
-Type=forking
-Environment=DISPLAY=:0
-ExecStartPre=
-ExecStart=/home/jonas/.config/
-
-[Install]
-WantedBy=suspend.target
-EOF
-	sudo systemctl daemon-reload
+	git clone git@github.com:JonasFocke01/dotfiles.git
+ 	sudo cp dotfiles/systemd/system/screenlock@.service /etc/systemd/system/screenlock@.service
+ 	sudo systemctl daemon-reload
  	sudo systemctl enable screenlock@jonas.service
         sudo apt install fzf fd-find ulauncher -y
 	sudo apt install feh imagemagick -y
@@ -206,14 +193,8 @@ fi
 echo "Configure Systemd config? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
-	sudo tee /etc/systemd/logind.conf <<EOF
-[Login]
-HandlePowerKey=suspend
-HandleLidSwitch=suspend
-HandleLidSwitchExternalPower=suspend
-HandleLidSwitchDocked=ignore
-LidSwitchIgnoreInhibited=yes
-EOF
+	git clone git@github.com:JonasFocke01/dotfiles.git
+ 	sudo cp dotfiles/systemd/logind.conf /etc/systemd/logind.conf
 fi
 
 echo "Install arduino-cli? (y/n)"
