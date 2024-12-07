@@ -88,8 +88,24 @@ fi
 echo "Install i3? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
-	sudo apt install i3 -y
-        sudo apt install i3blocks -y
+	sudo apt install i3 i3blocks i3lock -y
+ 	sudo tee /etc/systemd/system/screenlock@.service <<EOF
+[Unit]
+Description=Starts i3lock when suspending
+After=suspend.target
+
+[Service]
+User=jonas
+Type=forking
+Environment=DISPLAY=:0
+ExecStartPre=
+ExecStart=/home/jonas/.config/
+
+[Install]
+WantedBy=suspend.target
+EOF
+	sudo systemctl daemon-reload
+ 	sudo systemctl enable screenlock@jonas.service
         sudo apt install fzf fd-find ulauncher -y
 	sudo apt install feh imagemagick -y
 fi
