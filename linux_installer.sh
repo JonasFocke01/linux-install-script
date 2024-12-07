@@ -88,7 +88,7 @@ fi
 echo "Install i3? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
-	sudo apt install i3 i3blocks i3lock -y
+	sudo apt install i3 i3blocks i3lock network-manager-gnome dunst -y
 	git clone git@github.com:JonasFocke01/dotfiles.git
  	sudo cp dotfiles/systemd/system/screenlock@.service /etc/systemd/system/screenlock@.service
  	sudo systemctl daemon-reload
