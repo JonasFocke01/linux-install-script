@@ -101,7 +101,8 @@ if [ $confirmation = "y" ]; then
 	 	fzf \
    		fd-find \
      		ulauncher \
-       		pavucontrol
+       		pavucontrol \
+	 	copyq
 	git clone git@github.com:JonasFocke01/dotfiles.git
  	sudo cp dotfiles/systemd/system/screenlock@.service /etc/systemd/system/screenlock@.service
  	sudo systemctl daemon-reload
