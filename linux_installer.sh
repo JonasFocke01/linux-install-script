@@ -85,16 +85,27 @@ if [ $confirmation = "y" ]; then
 	sudo apt install tlp libudev-dev -y
 fi
 
-echo "Install i3? (y/n)"
+echo "Install i3 custom de? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
-	sudo apt install i3 i3blocks i3lock network-manager-gnome dunst -y
+	sudo apt install -y \
+ 		i3-wm \
+   		i3bar \
+   		i3blocks \
+     		i3lock \
+       		network-manager-gnome \
+	 	dunst \
+   		flameshot \
+     		feh \
+       		imagemagick \
+	 	fzf \
+   		fd-find \
+     		ulauncher \
+       		pavucontrol
 	git clone git@github.com:JonasFocke01/dotfiles.git
  	sudo cp dotfiles/systemd/system/screenlock@.service /etc/systemd/system/screenlock@.service
  	sudo systemctl daemon-reload
  	sudo systemctl enable screenlock@jonas.service
-        sudo apt install fzf fd-find ulauncher -y
-	sudo apt install feh imagemagick -y
 fi
 
 echo "Install neovim? (y/n)"
@@ -137,19 +148,6 @@ echo "Automount tigerly? (y/n)"
 read confirmation;
 if [ $confirmation = "y" ]; then
     echo "//tigerly/Allgemeine\040Daten /mnt/tigerly cifs username=manfild,password=DSsiKul24Sd,vers=2.0 0 0" | sudo tee -a /etc/fstab
-fi
-
-echo "Install Flameshot? (y/n)"
-read confirmation;
-if [ $confirmation = "y" ]; then
-	sudo apt install flameshot -y
- 	sudo apt install feh -y
-fi
-
-echo "Install Pavucontrol? (y/n)"
-read confirmation;
-if [ $confirmation = "y" ]; then
-	sudo apt install pavucontrol -y
 fi
 
 echo "Install nodeversionmanager? (y/n)"
